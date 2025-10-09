@@ -1,8 +1,8 @@
 /*
 Autor...: José Luiz Delgado Tavares
 Data....: 06/10/2025
-Membros.: RA - Enzo Gati Barbaresco
-          RA - José Luiz Delgado Tavares
+Membros.: 268322-2024 : Enzo Gati Barbaresco
+          292595-2025 : Jose Luiz Delgado Tavares
 Objetivo: Deixar todos os arquivos salvos aqui
 */
 
