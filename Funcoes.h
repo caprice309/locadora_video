@@ -1,8 +1,7 @@
 /*
-Autor...: José Luiz Delgado Tavares
-Data....: 06/10/2025
-Membros.: 268322-2024 : Enzo Gati Barbaresco
-          292595-2025 : Jose Luiz Delgado Tavares
+Data....: 16/10/2025
+Membros.: 268322-2025 - Enzo Gati Barbaresco
+          292595-2025 - José Luiz Delgado Tavares
 Objetivo: Deixar todos os arquivos salvos aqui
 */
 
@@ -25,6 +24,12 @@ void gotoxy(int x, int y);
 
 //Mostrar a Tela
 void tela();
+
+//Inserir o menu principal
+void menu();
+
+//Menu para controlar os arquivos do cliente
+void menu_cliente();
 
 //Fim do arquivo .h
 #endif
