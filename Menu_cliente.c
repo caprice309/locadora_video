@@ -6,6 +6,8 @@
   Objetivo: Cadastrar clientes
 */
 
+#include "Funcoes.h"
+
 void menu_cliente(){
     gotoxy(7,9);
     printf("1 - Cadastrar");
