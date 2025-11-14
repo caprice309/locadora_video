@@ -3,18 +3,18 @@
   Data....: 16/10/2025
   Membros.: 268322-2024 : Enzo Gati Barbaresco
             292595-2025 : Jose Luiz Delgado Tavares
-  Objetivo: Se a base de transição entre os diferentes menus de clientes
+  Objetivo: Alugar filmes disponiveis
 */
 
 #ifdef _MSC_VER
-    #define _CRT_SECURE_NO_WARNINGS
-    #pragma warning(disable : 4996)
+#define _CRT_SECURE_NO_WARNINGS
+#pragma warning(disable : 4996)
 #endif
 
 #include "Funcoes.h"
 #include <conio.h>
 
-void menu_cliente() {
+void alugar_movimentacao() {
     int i;
     int opcao;
 
@@ -29,17 +29,24 @@ void menu_cliente() {
         printf("ESTRUTURA DE DADOS");
 
         gotoxy(7, 7);
-        printf("MENU CLIENTE");
+        printf("ALUGAR FILME");
+
         gotoxy(7, 9);
-        printf("1 - Cadastrar");
+        printf("FILME");
+        gotoxy(7, 10);
+        printf("Codigo:........");
         gotoxy(7, 11);
-        printf("2 - Alterar");
-        gotoxy(7, 13);
-        printf("3 - Consultar");
+        printf("Titulo:........");
+        gotoxy(7, 12);
+        printf("Tipo:..........");
+
+
+        gotoxy(7, 14);
+        printf("CLIENTE");
         gotoxy(7, 15);
-        printf("4 - Excluir");
-        gotoxy(7, 17);
-        printf("5 - Retornar");
+        printf("Codigo:........");
+        gotoxy(7, 16);
+        printf("Nome:..........");
 
         for (i = 1; i <= 24; i++) {
             gotoxy(1, i);
@@ -113,34 +120,7 @@ void menu_cliente() {
         // converte para inteiro apenas se for válido
         opcao = atoi(entrada);
 
-        switch (opcao) {
-        case 1:
-            inclusao_cliente();
-        break;
+        
 
-        case 2:
-            Alterar_cliente();
-        break;
-
-        case 3:
-            Consultar_cliente();
-        break;
-
-        case 4:
-            Deletar_cliente();
-        break;
-
-        case 5:
-            tela();
-        break;
-
-        default:
-            gotoxy(8, 23);
-            printf("                                             ");
-            gotoxy(10, 23);
-            printf("Opcao invalida! Pressione qualquer tecla...");
-            getch();
-        break;
-    }
     } while (opcao != 5);
-}
+};

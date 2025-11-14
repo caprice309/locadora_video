@@ -3,18 +3,18 @@
   Data....: 16/10/2025
   Membros.: 268322-2024 : Enzo Gati Barbaresco
             292595-2025 : Jose Luiz Delgado Tavares
-  Objetivo: Se a base de transição entre os diferentes menus de clientes
+  Objetivo: Se a base de transição entre os diferentes menus de movimentação
 */
 
 #ifdef _MSC_VER
-    #define _CRT_SECURE_NO_WARNINGS
-    #pragma warning(disable : 4996)
+#define _CRT_SECURE_NO_WARNINGS
+#pragma warning(disable : 4996)
 #endif
 
 #include "Funcoes.h"
 #include <conio.h>
 
-void menu_cliente() {
+void menu_movimentacao() {
     int i;
     int opcao;
 
@@ -29,17 +29,13 @@ void menu_cliente() {
         printf("ESTRUTURA DE DADOS");
 
         gotoxy(7, 7);
-        printf("MENU CLIENTE");
+        printf("MENU MOVIMENTACAO");
         gotoxy(7, 9);
-        printf("1 - Cadastrar");
+        printf("1 - Alugar");
         gotoxy(7, 11);
-        printf("2 - Alterar");
+        printf("2 - Devolver");
         gotoxy(7, 13);
-        printf("3 - Consultar");
-        gotoxy(7, 15);
-        printf("4 - Excluir");
-        gotoxy(7, 17);
-        printf("5 - Retornar");
+        printf("3 - Retornar");
 
         for (i = 1; i <= 24; i++) {
             gotoxy(1, i);
@@ -115,7 +111,7 @@ void menu_cliente() {
 
         switch (opcao) {
         case 1:
-            inclusao_cliente();
+            alugar_movimentacao();
         break;
 
         case 2:
@@ -123,14 +119,6 @@ void menu_cliente() {
         break;
 
         case 3:
-            Consultar_cliente();
-        break;
-
-        case 4:
-            Deletar_cliente();
-        break;
-
-        case 5:
             tela();
         break;
 
@@ -141,6 +129,6 @@ void menu_cliente() {
             printf("Opcao invalida! Pressione qualquer tecla...");
             getch();
         break;
-    }
+        }
     } while (opcao != 5);
 }

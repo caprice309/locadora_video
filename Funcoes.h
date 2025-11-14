@@ -1,11 +1,13 @@
 /*
-Data....: 16/10/2025
-Membros.: 268322-2025 - Enzo Gati Barbaresco
-          292595-2025 - Jos√© Luiz Delgado Tavares
-Objetivo: Deixar todos os arquivos salvos aqui
+  Autor...: JosÈ Luiz Delgado Tavares
+  Data....: 16/10/2025
+  Membros.: 268322-2024 : Enzo Gati Barbaresco
+            292595-2025 : Jose Luiz Delgado Tavares
+  Objetivo: Mostrar a tela
 */
 
-//Come√ßo do arquivo .h
+
+//ComeÁo do arquivo .h
 #ifndef FUNCOES_H
 #define FUNCOES_H
 
@@ -17,52 +19,73 @@ Objetivo: Deixar todos os arquivos salvos aqui
 #include <windows.h>
 #include <conio.h>
 
-//Definindo o maximo
 #define MAX_CLIENTES 1000
+#define MAX_FILMES 1000
+#define MAX_TIPOS 1000
 
+//Estrutura clientes
 typedef struct {
-    int cd_cliente;           //Chave prim√°ria
-    char nm_cliente[51];      //Nome do cliente
-    char ds_endereco[51];     //Endere√ßo
-    int nr_numero;            //N√∫mero do endere√ßo
-    char nr_documento[21];    //N√∫mero do documento (CPF: 123.456.789-00)
-    char ds_cidade[51];       //Nome da cidade
-    char cd_uf[6];            //Sigla do estado
-    char dt_cadastro[20];     // DD/MM/YYYY HH:MM:SS
-    char nr_telefone[16];     //N√∫mero de telefone
-    int status;               // 0 = ativo, 1 = desativado
+    char confirma, nova;
+    char codigo[10];
+    char nome[100];
+    char endereco[200];
+    char cpf[11];
+    char cidade[100];
+    char uf[3];
+    char dataHora[20];
+
+    int filmesAlugados;
 } Cliente;
 
+//Estrutura filmes
+typedef struct {
+    char codigo[10];
+    char titulo[100];
+    char genero[50];
+    char diretor[100];
+    char ano[5];
+    char classificacao[10];
+    char dataHora[20];
+
+    int alugado;
+} Filme;
+
+//Estrutura Tipos
+typedef struct {
+    char codigo[10];
+    char tipo[50];
+    char descricao[200];
+    char relevancia[10];
+    char dataHora[20];
+} TipoFilme;
+
+
+//M·ximo etc etc
 static Cliente clientes[MAX_CLIENTES];
 static int n_clientes = 0;
+
+static Filme filmes[MAX_FILMES];
+static int n_filmes = 0;
+
+static TipoFilme tipos[MAX_TIPOS];
+static int n_tipos = 0;
 
 //Declarar as voids aqui e e comentar o que cada uma faz
 
 //Definir a linha do cursor no eixo X e Y
 void gotoxy(int x, int y);
 
-//Mostrar a Tela
-void tela();
+//Limpar buffer do teclado
+void limparBuffer();
 
-//Inserir o menu principal
-void menu();
+// FunÁ„o para salvar um cliente no arquivo
+void salvar_cliente(Cliente c);
 
-//Menu para controlar os arquivos do cliente
-void menu_cliente();
+// FunÁ„o para salvar um filme no arquivo
+void salvar_filmes(Filme f);
 
-//Fun√ß√£o para incluir clientes
-void incluir_cliente();
-
-//Fun√ß√£o para alterar clientes
-void alterar_cliente();
-
-//Fun√ß√£o para consultar clientes
-void consulta_cliente();
-
-//Fun√ß√£o para excluir clientes
-void excluir_cliente();
+// FunÁ„o para salvar um tipo
+void salvar_tipo(TipoFilme t);
 
 //Fim do arquivo .h
 #endif
-
-//MSG: N√≥s estamos muito fudidos

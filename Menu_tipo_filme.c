@@ -1,20 +1,21 @@
 /*
-  Autor...: José Luiz Delgado Tavares
+  Autor...: Enzo Gati Barbaresco
   Data....: 16/10/2025
   Membros.: 268322-2024 : Enzo Gati Barbaresco
             292595-2025 : Jose Luiz Delgado Tavares
-  Objetivo: Se a base de transição entre os diferentes menus de clientes
+  Objetivo: Se a base de transiï¿½ï¿½o entre os diferentes menus de Tipos de filmes
 */
 
 #ifdef _MSC_VER
-    #define _CRT_SECURE_NO_WARNINGS
-    #pragma warning(disable : 4996)
+#define _CRT_SECURE_NO_WARNINGS
+#pragma warning(disable : 4996)
 #endif
 
 #include "Funcoes.h"
 #include <conio.h>
+#include <ctype.h>
 
-void menu_cliente() {
+void menu_tipos_filme() {
     int i;
     int opcao;
 
@@ -29,15 +30,15 @@ void menu_cliente() {
         printf("ESTRUTURA DE DADOS");
 
         gotoxy(7, 7);
-        printf("MENU CLIENTE");
+        printf("MENU TIPOS DE FILME");
         gotoxy(7, 9);
-        printf("1 - Cadastrar");
+        printf("1 - Cadastrar Tipo");
         gotoxy(7, 11);
-        printf("2 - Alterar");
+        printf("2 - Alterar Tipo");
         gotoxy(7, 13);
-        printf("3 - Consultar");
+        printf("3 - Consultar Tipo");
         gotoxy(7, 15);
-        printf("4 - Excluir");
+        printf("4 - Excluir Tipo");
         gotoxy(7, 17);
         printf("5 - Retornar");
 
@@ -59,22 +60,14 @@ void menu_cliente() {
             printf("-");
         }
 
-        gotoxy(1, 1);
-        printf("+");
-        gotoxy(80, 1);
-        printf("+");
-        gotoxy(1, 4);
-        printf("+");
-        gotoxy(80, 4);
-        printf("+");
-        gotoxy(1, 22);
-        printf("+");
-        gotoxy(80, 22);
-        printf("+");
-        gotoxy(1, 24);
-        printf("+");
-        gotoxy(80, 24);
-        printf("+");
+        gotoxy(1, 1);  printf("+");
+        gotoxy(80, 1); printf("+");
+        gotoxy(1, 4);  printf("+");
+        gotoxy(80, 4); printf("+");
+        gotoxy(1, 22); printf("+");
+        gotoxy(80, 22); printf("+");
+        gotoxy(1, 24); printf("+");
+        gotoxy(80, 24); printf("+");
 
         gotoxy(2, 23);
         printf("MSG.: ");
@@ -82,11 +75,9 @@ void menu_cliente() {
         int valido = 0;
 
         while (!valido || strlen(entrada) == 0) {
-            // lê a entrada como texto
             fgets(entrada, sizeof(entrada), stdin);
-            entrada[strcspn(entrada, "\n")] = '\0'; // remove o Enter
+            entrada[strcspn(entrada, "\n")] = '\0';
 
-            // verifica se a entrada contém apenas números
             valido = 1;
             for (int i = 0; i < strlen(entrada); i++) {
                 if (!isdigit((unsigned char)entrada[i])) {
@@ -102,7 +93,6 @@ void menu_cliente() {
                 printf("Opcao invalida! Pressione qualquer tecla...");
                 getch();
 
-                // limpa mensagem de erro e reseta prompt
                 gotoxy(8, 23);
                 printf("                                             ");
                 gotoxy(2, 23);
@@ -110,24 +100,23 @@ void menu_cliente() {
             }
         }
 
-        // converte para inteiro apenas se for válido
         opcao = atoi(entrada);
 
         switch (opcao) {
         case 1:
-            inclusao_cliente();
+            inclusao_tipo();
         break;
 
         case 2:
-            Alterar_cliente();
+            Alterar_tipoFilme();
         break;
 
         case 3:
-            Consultar_cliente();
+            Consultar_tipoFilme();
         break;
 
         case 4:
-            Deletar_cliente();
+            Deletar_tipoFilme();
         break;
 
         case 5:
@@ -140,7 +129,8 @@ void menu_cliente() {
             gotoxy(10, 23);
             printf("Opcao invalida! Pressione qualquer tecla...");
             getch();
-        break;
-    }
+            break;
+        }
+
     } while (opcao != 5);
 }

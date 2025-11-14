@@ -1,20 +1,21 @@
 /*
-  Autor...: José Luiz Delgado Tavares
+  Autor...: Enzo Gati Barbaresco
   Data....: 16/10/2025
   Membros.: 268322-2024 : Enzo Gati Barbaresco
             292595-2025 : Jose Luiz Delgado Tavares
-  Objetivo: Se a base de transição entre os diferentes menus de clientes
+  Objetivo: Se a base de transiï¿½ï¿½o entre os diferentes menus de filmes
 */
 
 #ifdef _MSC_VER
-    #define _CRT_SECURE_NO_WARNINGS
-    #pragma warning(disable : 4996)
+#define _CRT_SECURE_NO_WARNINGS
+#pragma warning(disable : 4996)
 #endif
 
 #include "Funcoes.h"
 #include <conio.h>
+#include <ctype.h>
 
-void menu_cliente() {
+void menu_filmes() {
     int i;
     int opcao;
 
@@ -29,7 +30,7 @@ void menu_cliente() {
         printf("ESTRUTURA DE DADOS");
 
         gotoxy(7, 7);
-        printf("MENU CLIENTE");
+        printf("MENU FILMES");
         gotoxy(7, 9);
         printf("1 - Cadastrar");
         gotoxy(7, 11);
@@ -59,22 +60,14 @@ void menu_cliente() {
             printf("-");
         }
 
-        gotoxy(1, 1);
-        printf("+");
-        gotoxy(80, 1);
-        printf("+");
-        gotoxy(1, 4);
-        printf("+");
-        gotoxy(80, 4);
-        printf("+");
-        gotoxy(1, 22);
-        printf("+");
-        gotoxy(80, 22);
-        printf("+");
-        gotoxy(1, 24);
-        printf("+");
-        gotoxy(80, 24);
-        printf("+");
+        gotoxy(1, 1);  printf("+");
+        gotoxy(80, 1); printf("+");
+        gotoxy(1, 4);  printf("+");
+        gotoxy(80, 4); printf("+");
+        gotoxy(1, 22); printf("+");
+        gotoxy(80, 22); printf("+");
+        gotoxy(1, 24); printf("+");
+        gotoxy(80, 24); printf("+");
 
         gotoxy(2, 23);
         printf("MSG.: ");
@@ -82,11 +75,11 @@ void menu_cliente() {
         int valido = 0;
 
         while (!valido || strlen(entrada) == 0) {
-            // lê a entrada como texto
+            // lï¿½ a entrada como texto
             fgets(entrada, sizeof(entrada), stdin);
             entrada[strcspn(entrada, "\n")] = '\0'; // remove o Enter
 
-            // verifica se a entrada contém apenas números
+            // verifica se a entrada contï¿½m apenas nï¿½meros
             valido = 1;
             for (int i = 0; i < strlen(entrada); i++) {
                 if (!isdigit((unsigned char)entrada[i])) {
@@ -110,24 +103,24 @@ void menu_cliente() {
             }
         }
 
-        // converte para inteiro apenas se for válido
+        // converte para inteiro apenas se for vï¿½lido
         opcao = atoi(entrada);
 
         switch (opcao) {
         case 1:
-            inclusao_cliente();
+            inclusao_filme();
         break;
 
         case 2:
-            Alterar_cliente();
+            Alterar_filme();
         break;
 
         case 3:
-            Consultar_cliente();
+            Consultar_filme();
         break;
 
         case 4:
-            Deletar_cliente();
+            Deletar_filme();
         break;
 
         case 5:
@@ -141,6 +134,6 @@ void menu_cliente() {
             printf("Opcao invalida! Pressione qualquer tecla...");
             getch();
         break;
-    }
+        }
     } while (opcao != 5);
 }
