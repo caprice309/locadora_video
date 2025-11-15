@@ -115,7 +115,7 @@ void menu_movimentacao() {
         break;
 
         case 2:
-            Alterar_cliente();
+            devolver_movimentacao();
         break;
 
         case 3:
