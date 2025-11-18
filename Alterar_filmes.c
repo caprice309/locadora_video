@@ -1,9 +1,9 @@
 /*
-  Autor...: José Luiz Delgado Tavares
+  Autor...: Enzo Gati Barbaresco
   Data....: 16/10/2025
   Membros.: 268322-2024 : Enzo Gati Barbaresco
             292595-2025 : Jose Luiz Delgado Tavares
-  Objetivo: Mudar informações de filmes
+  Objetivo: Mudar informaÃ§Ãµes de filmes
 */
 
 #ifdef _MSC_VER
@@ -73,7 +73,7 @@ void Alterar_filme() {
 
         // ===== Entrada dos campos =====
 
-        // Código
+        // CÃ³digo
         do {
             gotoxy(27, 9);
             printf("                    ");
@@ -82,7 +82,7 @@ void Alterar_filme() {
             codigo[strcspn(codigo, "\n")] = '\0';
         } while (strlen(codigo) == 0);
 
-        // Título
+        // TÃ­tulo
         do {
             gotoxy(27, 11);
             printf("                                        ");
@@ -129,9 +129,9 @@ void Alterar_filme() {
             token = strtok(NULL, ",");
             if (token) strcpy(f.dataHora, token);
             token = strtok(NULL, ",");
-            if (token) f.alugado = atoi(token); // lê o campo alugado (0 ou 1)
+            if (token) f.alugado = atoi(token); // lÃª o campo alugado (0 ou 1)
 
-            // Verifica correspondência
+            // Verifica correspondÃªncia
             if (strcmp(f.codigo, codigo) == 0 &&
                 strcmp(f.titulo, titulo) == 0 &&
                 strcmp(f.diretor, diretor) == 0) {
@@ -143,7 +143,7 @@ void Alterar_filme() {
         fclose(arquivo);
 
         if (encontrado) {
-            // Limpa área central
+            // Limpa Ã¡rea central
             for (int y = 6; y <= 20; y++) {
                 gotoxy(5, y);
                 printf("                                                                               ");
@@ -154,7 +154,7 @@ void Alterar_filme() {
 
             char tmp[256];
 
-            // Código
+            // CÃ³digo
             gotoxy(7, 8);
             printf("Codigo do filme.........: %s", f.codigo);
             gotoxy(40, 8);
@@ -167,7 +167,7 @@ void Alterar_filme() {
             while (e >= s && (tmp[e] == ' ' || tmp[e] == '\t')) tmp[e--] = '\0';
             if (strlen(tmp + s) > 0) strncpy(f.codigo, tmp + s, sizeof(f.codigo) - 1);
 
-            // Título
+            // TÃ­tulo
             gotoxy(7, 9);
             printf("Titulo do filme.........: %s", f.titulo);
             gotoxy(40, 9);
@@ -194,7 +194,7 @@ void Alterar_filme() {
                 fgets(tmp, sizeof(tmp), stdin);
                 tmp[strcspn(tmp, "\n")] = '\0';
 
-                // Verifica se só tem números
+                // Verifica se sÃ³ tem nÃºmeros
                 for (int i = 0; i < strlen(tmp); i++) {
                     if (!isdigit(tmp[i])) {
                         valido = 0;
@@ -236,7 +236,7 @@ void Alterar_filme() {
             tmp[strcspn(tmp, "\n")] = '\0';
             if (strlen(tmp) > 0) strncpy(f.ano, tmp, sizeof(f.ano) - 1);
 
-            // Classificação
+            // ClassificaÃ§Ã£o
             gotoxy(7, 13);
             printf("Classificacao indicativa: %s", f.classificacao);
             gotoxy(40, 13);
@@ -246,7 +246,7 @@ void Alterar_filme() {
             tmp[strcspn(tmp, "\n")] = '\0';
             if (strlen(tmp) > 0) strncpy(f.classificacao, tmp, sizeof(f.classificacao) - 1);
 
-            // ===== Confirmação =====
+            // ===== ConfirmaÃ§Ã£o =====
             char confirma;
             do {
                 gotoxy(2, 23);
@@ -266,7 +266,7 @@ void Alterar_filme() {
                 char linhaTemp[512];
                 long posInicio = -1;
 
-                // Procura a posição do cliente no arquivo 
+                // Procura a posiÃ§Ã£o do cliente no arquivo 
                 while (!feof(arquivo)) {
                     long pos = ftell(arquivo);
                     if (fgets(linhaTemp, sizeof(linhaTemp), arquivo) == NULL) break;
@@ -329,7 +329,7 @@ void Alterar_filme() {
                 }
             }
 
-            // ===== Nova alteração =====
+            // ===== Nova alteraÃ§Ã£o =====
             char nova;
             do {
                 gotoxy(2, 23);
@@ -361,3 +361,4 @@ void Alterar_filme() {
 
     } while (1);
 }
+
