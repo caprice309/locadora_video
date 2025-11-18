@@ -1,5 +1,5 @@
 /*
-  Autor...: José Luiz Delgado Tavares
+  Autor...: Enzo Gati Barbaresco
   Data....: 16/10/2025
   Membros.: 268322-2024 : Enzo Gati Barbaresco
             292595-2025 : Jose Luiz Delgado Tavares
@@ -73,7 +73,7 @@ void Deletar_tipoFilme() {
 
         // ===== Entrada =====
 
-        // Código
+        // CÃ³digo
         do {
             gotoxy(27, 9);
             printf("                    ");
@@ -137,7 +137,7 @@ void Deletar_tipoFilme() {
 
         if (encontrado) {
 
-            // Limpa área onde aparecem os dados
+            // Limpa Ã¡rea onde aparecem os dados
             for (int y = 6; y <= 20; y++) {
                 gotoxy(5, y);
                 printf("                                                                               ");
@@ -155,7 +155,7 @@ void Deletar_tipoFilme() {
             gotoxy(7, 11);
             printf("Data e hora do cadastro...: %s", t.dataHora);
 
-            // ===== Confirma exclusão =====
+            // ===== Confirma exclusÃ£o =====
             char confirma;
             do {
                 gotoxy(2, 23);
@@ -226,7 +226,7 @@ void Deletar_tipoFilme() {
                 }
             }
 
-            // ===== Nova exclusão =====
+            // ===== Nova exclusÃ£o =====
             char nova;
             do {
                 gotoxy(2, 23);
@@ -272,3 +272,4 @@ void Deletar_tipoFilme() {
 
     } while (1);
 }
+
