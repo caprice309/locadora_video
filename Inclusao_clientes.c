@@ -1,5 +1,5 @@
 /*
-  Autor...: José Luiz Delgado Tavares
+  Autor...: Enzo Gati Barbaresco
   Data....: 16/10/2025
   Membros.: 268322-2024 : Enzo Gati Barbaresco
             292595-2025 : Jose Luiz Delgado Tavares
@@ -21,12 +21,12 @@ void limparBuffer() {
 };
 
 void salvar_cliente(Cliente c) {
-    // Adiciona no array de clientes em memória
+    // Adiciona no array de clientes em memÃ³ria
     if (n_clientes < MAX_CLIENTES) {
         clientes[n_clientes++] = c;
     }
     else {
-        printf("Limite máximo de clientes atingido!\n");
+        printf("Limite mÃ¡ximo de clientes atingido!\n");
         return;
     }
 
@@ -37,7 +37,7 @@ void salvar_cliente(Cliente c) {
         return;
     }
 
-    // Salva os dados no arquivo em formato texto, separados por vírgula
+    // Salva os dados no arquivo em formato texto, separados por vÃ­rgula
     fprintf(arquivo, "%s,%s,%s,%s,%s,%s,%s,%d\n",
         c.codigo,
         c.nome,
@@ -136,7 +136,7 @@ void inclusao_cliente() {
 
         // ===== Entrada dos campos =====
 
-        // Código
+        // CÃ³digo
         do {
             gotoxy(37, 8);
             printf("                 ");
@@ -154,7 +154,7 @@ void inclusao_cliente() {
             nome[strcspn(nome, "\n")] = '\0';
         } while (strlen(nome) == 0);
 
-        // Endereço
+        // EndereÃ§o
         do {
             gotoxy(37, 10);
             printf("                                        ");
@@ -204,7 +204,7 @@ void inclusao_cliente() {
             printf("Erro ao obter data/hora");
         };
         
-        // Confirmação do cadastro
+        // ConfirmaÃ§Ã£o do cadastro
         do {
             gotoxy(37, 16);
             confirma = getchar();
@@ -212,7 +212,7 @@ void inclusao_cliente() {
         } while (confirma != 'S' && confirma != 'N');
         
         if (confirma == 'N') { 
-            // Pergunta se quer nova inclusão
+            // Pergunta se quer nova inclusÃ£o
             do {
                 gotoxy(37, 18);
                 nova = getchar();
@@ -242,8 +242,8 @@ void inclusao_cliente() {
             strcpy(c.dataHora, dataHora);
             c.filmesAlugados = 0;
 
-            // Chama a função para salvar na memória e no arquivo
-            // ===== Verifica se já existe cliente com o mesmo código ou CPF =====
+            // Chama a funÃ§Ã£o para salvar na memÃ³ria e no arquivo
+            // ===== Verifica se jÃ¡ existe cliente com o mesmo cÃ³digo ou CPF =====
             FILE* arquivo = fopen("clientes.txt", "r");
             int duplicado = 0;
             char linha[512];
@@ -268,7 +268,7 @@ void inclusao_cliente() {
                     token = strtok(NULL, ",");
                     if (token) temp.filmesAlugados = atoi(token);
 
-                    // Verifica se já existe código ou CPF igual
+                    // Verifica se jÃ¡ existe cÃ³digo ou CPF igual
                     if (strcmp(temp.codigo, c.codigo) == 0 || strcmp(temp.cpf, c.cpf) == 0) {
                         duplicado = 1;
                         break;
@@ -282,7 +282,7 @@ void inclusao_cliente() {
                 printf("MSG.: Ja existe um cliente com esse CODIGO ou CPF!");
                 getch();
 
-                // Pergunta se quer nova inclusão
+                // Pergunta se quer nova inclusÃ£o
                 do {
                     gotoxy(37, 18);
                     nova = getchar();
@@ -306,7 +306,7 @@ void inclusao_cliente() {
                 printf("Cliente cadastrado com sucesso!");
                 getch();
 
-                // Pergunta se quer nova inclusão
+                // Pergunta se quer nova inclusÃ£o
                 do {
                     gotoxy(37, 18);
                     nova = getchar();
@@ -323,4 +323,5 @@ void inclusao_cliente() {
                 }
             }
         }
+
 }
