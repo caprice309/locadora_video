@@ -1,5 +1,5 @@
 /*
-  Autor...: José Luiz Delgado Tavares
+  Autor...: Enzo Gati Barbaresco
   Data....: 16/10/2025
   Membros.: 268322-2024 : Enzo Gati Barbaresco
             292595-2025 : Jose Luiz Delgado Tavares
@@ -16,14 +16,14 @@
 #include <string.h>
 #include <ctype.h>
 
-// Salva um TipoFilme em memória e no arquivo "tipos.txt"
+// Salva um TipoFilme em memÃ³ria e no arquivo "tipos.txt"
 void salvar_tipo(TipoFilme t) {
-    // Adiciona no array de tipos em memória
+    // Adiciona no array de tipos em memÃ³ria
     if (n_tipos < MAX_TIPOS) {
         tipos[n_tipos++] = t;
     }
     else {
-        printf("Limite máximo de tipos atingido!\n");
+        printf("Limite mÃ¡ximo de tipos atingido!\n");
         return;
     }
 
@@ -107,7 +107,7 @@ void inclusao_tipo() {
 
     // ===== Entrada dos campos =====
 
-    // Código
+    // CÃ³digo
     do {
         gotoxy(37, 8);
         printf("                 ");
@@ -157,7 +157,7 @@ void inclusao_tipo() {
         printf("Erro ao obter data/hora");
     }
 
-    // ===== Confirmação =====
+    // ===== ConfirmaÃ§Ã£o =====
     do {
         gotoxy(37, 14);
         confirma = getchar();
@@ -235,3 +235,4 @@ void inclusao_tipo() {
         }
     }
 }
+
