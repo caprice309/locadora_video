@@ -1,5 +1,5 @@
 /*
-  Autor...: José Luiz Delgado Tavares
+  Autor...: Enzo Gati Barbaresco
   Data....: 16/10/2025
   Membros.: 268322-2024 : Enzo Gati Barbaresco
             292595-2025 : Jose Luiz Delgado Tavares
@@ -17,12 +17,12 @@
 #include <ctype.h>
 
 void salvar_filmes(Filme f) {
-    // Adiciona no array de filmes em memória
+    // Adiciona no array de filmes em memÃ³ria
     if (n_filmes < MAX_FILMES) {
         filmes[n_filmes++] = f;
     }
     else {
-        printf("Limite máximo de filmes atingido!\n");
+        printf("Limite mÃ¡ximo de filmes atingido!\n");
         return;
     }
 
@@ -33,7 +33,7 @@ void salvar_filmes(Filme f) {
         return;
     }
 
-    // Salva os dados no arquivo em formato texto, separados por vírgula
+    // Salva os dados no arquivo em formato texto, separados por vÃ­rgula
     fprintf(arquivo, "%s,%s,%s,%s,%s,%s,%s,%d\n",
         f.codigo,
         f.titulo,
@@ -130,7 +130,7 @@ void inclusao_filme() {
 
     // ===== Entrada dos campos =====
 
-    // Código
+    // CÃ³digo
     do {
         gotoxy(37, 8);
         printf("                 ");
@@ -139,7 +139,7 @@ void inclusao_filme() {
         codigo[strcspn(codigo, "\n")] = '\0';
     } while (strlen(codigo) == 0);
 
-    // Título
+    // TÃ­tulo
     do {
         gotoxy(37, 9);
         printf("                                        ");
@@ -148,7 +148,7 @@ void inclusao_filme() {
         titulo[strcspn(titulo, "\n")] = '\0';
     } while (strlen(titulo) == 0);
 
-    // Gênero
+    // GÃªnero
     do {
         int valido = 1;
 
@@ -159,7 +159,7 @@ void inclusao_filme() {
         fgets(genero, sizeof(genero), stdin);
         genero[strcspn(genero, "\n")] = '\0';
 
-        // Verifica se só tem números
+        // Verifica se sÃ³ tem nÃºmeros
         for (int i = 0; i < strlen(genero); i++) {
             if (!isdigit(genero[i])) {
                 valido = 0;
@@ -193,7 +193,7 @@ void inclusao_filme() {
         ano[strcspn(ano, "\n")] = '\0';
     } while (strlen(ano) == 0);
 
-    // Classificação
+    // ClassificaÃ§Ã£o
     do {
         gotoxy(37, 13);
         printf("     ");
@@ -216,7 +216,7 @@ void inclusao_filme() {
         printf("Erro ao obter data/hora");
     };
 
-    // ===== Confirmação =====
+    // ===== ConfirmaÃ§Ã£o =====
     do {
         gotoxy(37, 16);
         confirma = getchar();
@@ -271,7 +271,7 @@ void inclusao_filme() {
                 token = strtok(NULL, ",");
                 if (token) temp.alugado = atoi(token);
 
-                // Verifica se já existe código igual
+                // Verifica se jÃ¡ existe cÃ³digo igual
                 if (strcmp(temp.codigo, f.codigo) == 0) {
                     duplicado = 1;
                     break;
@@ -324,3 +324,4 @@ void inclusao_filme() {
         }
     }
 }
+
