@@ -1,5 +1,5 @@
 /*
-  Autor...: José Luiz Delgado Tavares
+  Autor...: Enzo Gati Barbaresco
   Data....: 16/10/2025
   Membros.: 268322-2024 : Enzo Gati Barbaresco
             292595-2025 : Jose Luiz Delgado Tavares
@@ -7,7 +7,7 @@
 */
 
 
-//Começo do arquivo .h
+//ComeÃ§o do arquivo .h
 #ifndef FUNCOES_H
 #define FUNCOES_H
 
@@ -60,7 +60,7 @@ typedef struct {
     char dataHora[20];
 } TipoFilme;
 
-// Estrutura histórico de locações
+// Estrutura histÃ³rico de locaÃ§Ãµes
 typedef struct {
     // Dados do filme
     char codigoFilme[10];
@@ -79,7 +79,7 @@ typedef struct {
 } HistoricoLocacao;
 
 
-//Máximo etc etc
+//MÃ¡ximo etc etc
 static Cliente clientes[MAX_CLIENTES];
 static int n_clientes = 0;
 
@@ -100,22 +100,23 @@ void gotoxy(int x, int y);
 //Limpar buffer do teclado
 void limparBuffer();
 
-// Função para salvar um cliente no arquivo
+// FunÃ§Ã£o para salvar um cliente no arquivo
 void salvar_cliente(Cliente c);
 
-// Função para salvar um filme no arquivo
+// FunÃ§Ã£o para salvar um filme no arquivo
 void salvar_filmes(Filme f);
 
-// Função para salvar um tipo
+// FunÃ§Ã£o para salvar um tipo
 void salvar_tipo(TipoFilme t);
 
-// Função para detectar linhas vazias no TXT onde os dados tão salvos e ignorar elas
+// FunÃ§Ã£o para detectar linhas vazias no TXT onde os dados tÃ£o salvos e ignorar elas
 int linha_vazia(const char* s);
 
-//Usado para evitar um erro estranho de recursão que é bem meh pra falar a real
+//Usado para evitar um erro estranho de recursÃ£o que Ã© bem meh pra falar a real
 void menu_movimentacao();
 int perguntarNovaDevolucao();
 int perguntarNovoEmprestimo();
 
 //Fim do arquivo .h
 #endif
+
