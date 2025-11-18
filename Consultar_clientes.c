@@ -1,5 +1,5 @@
 /*
-  Autor...: José Luiz Delgado Tavares
+  Autor...: Enzo Gati Barbaresco
   Data....: 16/10/2025
   Membros.: 268322-2024 : Enzo Gati Barbaresco
             292595-2025 : Jose Luiz Delgado Tavares
@@ -73,7 +73,7 @@ void Consultar_cliente() {
 
         // ===== Entrada dos campos =====
 
-        // Código
+        // CÃ³digo
         do {
             gotoxy(27, 9);
             printf("                    "); 
@@ -127,7 +127,7 @@ void Consultar_cliente() {
             token = strtok(NULL, ",");
             if (token) strcpy(c.dataHora, token);
 
-            // Verifica correspondência
+            // Verifica correspondÃªncia
             if (strcmp(c.codigo, codigo) == 0 &&
                 strcmp(c.nome, nome) == 0 &&
                 strcmp(c.cpf, cpf) == 0) {
@@ -139,7 +139,7 @@ void Consultar_cliente() {
         fclose(arquivo);
 
         if (encontrado) {
-            // Limpa área central e mostra dados do cliente
+            // Limpa Ã¡rea central e mostra dados do cliente
             for (int y = 6; y <= 20; y++) {
                 gotoxy(5, y);
                 printf("                                                                               ");
@@ -206,3 +206,4 @@ void Consultar_cliente() {
 
     } while (1);
 }
+
