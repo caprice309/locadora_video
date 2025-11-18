@@ -77,11 +77,11 @@ void tela() {
         int valido = 0;
 
         while (!valido || strlen(entrada) == 0) {
-            // lÃª a entrada como texto
+            // lê a entrada como texto
             fgets(entrada, sizeof(entrada), stdin);
             entrada[strcspn(entrada, "\n")] = '\0'; // remove o Enter
 
-            // verifica se a entrada contÃ©m apenas nÃºmeros
+            // verifica se a entrada contém apenas números
             valido = 1;
             for (int i = 0; i < strlen(entrada); i++) {
                 if (!isdigit((unsigned char)entrada[i])) {
@@ -105,7 +105,7 @@ void tela() {
             }
         }
 
-        // converte entrada vÃ¡lida para nÃºmero
+        // converte entrada válida para número
         opcao = atoi(entrada);
 
         switch (opcao) {
@@ -145,4 +145,3 @@ void tela() {
 
     } while (opcao != 6);
 }
-

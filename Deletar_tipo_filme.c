@@ -12,6 +12,8 @@
 #endif
 
 #include "Funcoes.h"
+#include <ctype.h>
+
 
 void Deletar_tipoFilme() {
 
@@ -73,7 +75,7 @@ void Deletar_tipoFilme() {
 
         // ===== Entrada =====
 
-        // CÃ³digo
+        // Código
         do {
             gotoxy(27, 9);
             printf("                    ");
@@ -137,7 +139,7 @@ void Deletar_tipoFilme() {
 
         if (encontrado) {
 
-            // Limpa Ã¡rea onde aparecem os dados
+            // Limpa área onde aparecem os dados
             for (int y = 6; y <= 20; y++) {
                 gotoxy(5, y);
                 printf("                                                                               ");
@@ -155,7 +157,7 @@ void Deletar_tipoFilme() {
             gotoxy(7, 11);
             printf("Data e hora do cadastro...: %s", t.dataHora);
 
-            // ===== Confirma exclusÃ£o =====
+            // ===== Confirma exclusão =====
             char confirma;
             do {
                 gotoxy(2, 23);
@@ -226,7 +228,7 @@ void Deletar_tipoFilme() {
                 }
             }
 
-            // ===== Nova exclusÃ£o =====
+            // ===== Nova exclusão =====
             char nova;
             do {
                 gotoxy(2, 23);
@@ -272,4 +274,3 @@ void Deletar_tipoFilme() {
 
     } while (1);
 }
-

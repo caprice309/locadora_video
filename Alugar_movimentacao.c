@@ -16,26 +16,28 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <ctype.h>
+
 
 void salvar_historico(HistoricoLocacao h) {
 
-    // Adiciona no array de histÃ³rico em memÃ³ria
+    // Adiciona no array de histórico em memória
     if (n_historico < MAX_HISTORICO) {
         historico[n_historico++] = h;
     }
     else {
-        printf("Limite mÃ¡ximo de registros do histÃ³rico atingido!\n");
+        printf("Limite máximo de registros do histórico atingido!\n");
         return;
     }
 
     // Abre o arquivo para acrescentar o registro
     FILE* arquivo = fopen("historico.txt", "a");
     if (arquivo == NULL) {
-        printf("Erro ao abrir arquivo para salvar o histÃ³rico.\n");
+        printf("Erro ao abrir arquivo para salvar o histórico.\n");
         return;
     }
 
-    // Salva os dados no arquivo em formato texto, separados por vÃ­rgula
+    // Salva os dados no arquivo em formato texto, separados por vírgula
     fprintf(arquivo, "%s,%s,%d,%s,%s,%d,%s,%s\n",
         h.codigoFilme,
         h.tituloFilme,
@@ -62,7 +64,7 @@ int perguntarNovoEmprestimo() {
 
     limparBuffer();
 
-    return (novo == 'S'); // 1 = sim | 0 = nÃ£o
+    return (novo == 'S'); // 1 = sim | 0 = não
 }
 
 void alugar_movimentacao() {
@@ -133,7 +135,7 @@ void alugar_movimentacao() {
         if (!arq) {
             gotoxy(2, 23); printf("ERRO AO ABRIR ARQUIVO DE FILMES!");
             getch();
-            continue;   // volta ao loop sem recursÃ£o
+            continue;   // volta ao loop sem recursão
         }
 
         Filme filmes[500];
@@ -158,7 +160,7 @@ void alugar_movimentacao() {
         }
         fclose(arq);
 
-        // --- filme nÃ£o encontrado ---
+        // --- filme não encontrado ---
         if (indiceFilme == -1) {
             gotoxy(2, 23); printf("FILME NAO ENCONTRADO!");
             getch();
@@ -170,7 +172,7 @@ void alugar_movimentacao() {
             continue;
         }
 
-        // --- verificar se hÃ¡ quantidade disponÃ­vel ---
+        // --- verificar se há quantidade disponível ---
         int quantidadeTotal = atoi(filmes[indiceFilme].genero);
         int quantidadeAlugada = filmes[indiceFilme].alugado;
 
@@ -361,9 +363,9 @@ void alugar_movimentacao() {
         gotoxy(2, 23); printf("FILME ALUGADO COM SUCESSO!");
         getch();
 
-        // ================== REGISTRAR NO HISTÃ“RICO ==================
+        // ================== REGISTRAR NO HISTÓRICO ==================
         HistoricoLocacao h;
-        memset(&h, 0, sizeof(HistoricoLocacao));  // <-- CORREÃ‡ÃƒO PRINCIPAL
+        memset(&h, 0, sizeof(HistoricoLocacao));  // <-- CORREÇÃO PRINCIPAL
 
         // FILME
         strcpy(h.codigoFilme, filmes[indiceFilme].codigo);
@@ -373,7 +375,7 @@ void alugar_movimentacao() {
         strcpy(h.codigoCliente, codCliente);
         strcpy(h.nomeCliente, nomeCliente);
 
-        // ===== VERIFICAR SE JÃ EXISTE =====
+        // ===== VERIFICAR SE JÁ EXISTE =====
         int achouFilme = 0;
         int achouCliente = 0;
 
@@ -404,7 +406,7 @@ void alugar_movimentacao() {
             h.dataAluguel[sizeof(h.dataAluguel) - 1] = '\0';
         }
 
-        // ===== DATA DE DEVOLUÃ‡ÃƒO =====
+        // ===== DATA DE DEVOLUÇÃO =====
         agora += (time_t)14 * 24 * 3600;
         dataPtr = localtime(&agora);
         if (dataPtr != NULL) {
@@ -426,4 +428,3 @@ void alugar_movimentacao() {
 
     } // fim do while(1)
 }
-

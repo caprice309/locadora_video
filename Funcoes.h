@@ -7,7 +7,7 @@
 */
 
 
-//ComeÃ§o do arquivo .h
+//Começo do arquivo .h
 #ifndef FUNCOES_H
 #define FUNCOES_H
 
@@ -60,7 +60,7 @@ typedef struct {
     char dataHora[20];
 } TipoFilme;
 
-// Estrutura histÃ³rico de locaÃ§Ãµes
+// Estrutura histórico de locações
 typedef struct {
     // Dados do filme
     char codigoFilme[10];
@@ -79,7 +79,7 @@ typedef struct {
 } HistoricoLocacao;
 
 
-//MÃ¡ximo etc etc
+//Máximo etc etc
 static Cliente clientes[MAX_CLIENTES];
 static int n_clientes = 0;
 
@@ -100,23 +100,60 @@ void gotoxy(int x, int y);
 //Limpar buffer do teclado
 void limparBuffer();
 
-// FunÃ§Ã£o para salvar um cliente no arquivo
+// Função para salvar um cliente no arquivo
 void salvar_cliente(Cliente c);
 
-// FunÃ§Ã£o para salvar um filme no arquivo
+// Função para salvar um filme no arquivo
 void salvar_filmes(Filme f);
 
-// FunÃ§Ã£o para salvar um tipo
+// Função para salvar um tipo
 void salvar_tipo(TipoFilme t);
 
-// FunÃ§Ã£o para detectar linhas vazias no TXT onde os dados tÃ£o salvos e ignorar elas
+// Função para salvar histórico
+void salvar_historico(HistoricoLocacao h);
+
+// Função para detectar linhas vazias no TXT onde os dados tão salvos e ignorar elas
 int linha_vazia(const char* s);
 
-//Usado para evitar um erro estranho de recursÃ£o que Ã© bem meh pra falar a real
+//Usado para evitar um erro estranho de recursão que é bem meh pra falar a real
 void menu_movimentacao();
 int perguntarNovaDevolucao();
 int perguntarNovoEmprestimo();
 
+//Data
+void extrairMesAno(const char* data, int* dia, int* mes, int* ano);
+
+//funcoes de tela
+void tela();
+int main();
+void menu_cliente();
+void balanco_movimentacoes();
+void balanco_acervo();
+void Alterar_cliente();
+void Alterar_filme();
+void Alterar_tipoFilme();
+int perguntarNovoEmprestimo();
+void alugar_movimentacao();
+void Consultar_cliente();
+void Consultar_filme();
+void Consultar_tipoFilme();
+void Deletar_cliente();
+void Deletar_filme();
+void Deletar_tipoFilme();
+int perguntarNovaDevolucao();
+void devolver_movimentacao();
+void limparBuffer();
+void inclusao_cliente();
+void inclusao_filme();
+void inclusao_tipo();
+void menu_filmes();
+void menu_movimentacao();
+void menu_relatorios();
+void menu_tipos_filme();
+
+
+//Gotoxy
+void gotoxy(int x, int y);
+
 //Fim do arquivo .h
 #endif
-

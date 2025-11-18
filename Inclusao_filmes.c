@@ -17,12 +17,12 @@
 #include <ctype.h>
 
 void salvar_filmes(Filme f) {
-    // Adiciona no array de filmes em memÃ³ria
+    // Adiciona no array de filmes em memória
     if (n_filmes < MAX_FILMES) {
         filmes[n_filmes++] = f;
     }
     else {
-        printf("Limite mÃ¡ximo de filmes atingido!\n");
+        printf("Limite máximo de filmes atingido!\n");
         return;
     }
 
@@ -33,7 +33,7 @@ void salvar_filmes(Filme f) {
         return;
     }
 
-    // Salva os dados no arquivo em formato texto, separados por vÃ­rgula
+    // Salva os dados no arquivo em formato texto, separados por vírgula
     fprintf(arquivo, "%s,%s,%s,%s,%s,%s,%s,%d\n",
         f.codigo,
         f.titulo,
@@ -130,7 +130,7 @@ void inclusao_filme() {
 
     // ===== Entrada dos campos =====
 
-    // CÃ³digo
+    // Código
     do {
         gotoxy(37, 8);
         printf("                 ");
@@ -139,7 +139,7 @@ void inclusao_filme() {
         codigo[strcspn(codigo, "\n")] = '\0';
     } while (strlen(codigo) == 0);
 
-    // TÃ­tulo
+    // Título
     do {
         gotoxy(37, 9);
         printf("                                        ");
@@ -148,7 +148,7 @@ void inclusao_filme() {
         titulo[strcspn(titulo, "\n")] = '\0';
     } while (strlen(titulo) == 0);
 
-    // GÃªnero
+    // Gênero
     do {
         int valido = 1;
 
@@ -159,7 +159,7 @@ void inclusao_filme() {
         fgets(genero, sizeof(genero), stdin);
         genero[strcspn(genero, "\n")] = '\0';
 
-        // Verifica se sÃ³ tem nÃºmeros
+        // Verifica se só tem números
         for (int i = 0; i < strlen(genero); i++) {
             if (!isdigit(genero[i])) {
                 valido = 0;
@@ -193,7 +193,7 @@ void inclusao_filme() {
         ano[strcspn(ano, "\n")] = '\0';
     } while (strlen(ano) == 0);
 
-    // ClassificaÃ§Ã£o
+    // Classificação
     do {
         gotoxy(37, 13);
         printf("     ");
@@ -216,7 +216,7 @@ void inclusao_filme() {
         printf("Erro ao obter data/hora");
     };
 
-    // ===== ConfirmaÃ§Ã£o =====
+    // ===== Confirmação =====
     do {
         gotoxy(37, 16);
         confirma = getchar();
@@ -271,7 +271,7 @@ void inclusao_filme() {
                 token = strtok(NULL, ",");
                 if (token) temp.alugado = atoi(token);
 
-                // Verifica se jÃ¡ existe cÃ³digo igual
+                // Verifica se já existe código igual
                 if (strcmp(temp.codigo, f.codigo) == 0) {
                     duplicado = 1;
                     break;
@@ -324,4 +324,3 @@ void inclusao_filme() {
         }
     }
 }
-

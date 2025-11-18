@@ -12,6 +12,8 @@
 #endif
 
 #include "Funcoes.h"
+#include <ctype.h>
+
 
 void Consultar_cliente() {
 
@@ -73,7 +75,7 @@ void Consultar_cliente() {
 
         // ===== Entrada dos campos =====
 
-        // CÃ³digo
+        // Código
         do {
             gotoxy(27, 9);
             printf("                    "); 
@@ -127,7 +129,7 @@ void Consultar_cliente() {
             token = strtok(NULL, ",");
             if (token) strcpy(c.dataHora, token);
 
-            // Verifica correspondÃªncia
+            // Verifica correspondência
             if (strcmp(c.codigo, codigo) == 0 &&
                 strcmp(c.nome, nome) == 0 &&
                 strcmp(c.cpf, cpf) == 0) {
@@ -139,7 +141,7 @@ void Consultar_cliente() {
         fclose(arquivo);
 
         if (encontrado) {
-            // Limpa Ã¡rea central e mostra dados do cliente
+            // Limpa área central e mostra dados do cliente
             for (int y = 6; y <= 20; y++) {
                 gotoxy(5, y);
                 printf("                                                                               ");
@@ -206,4 +208,3 @@ void Consultar_cliente() {
 
     } while (1);
 }
-

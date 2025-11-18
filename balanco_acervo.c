@@ -18,7 +18,7 @@ void balanco_acervo() {
 
     system("color 0a");
 
-    // ====== CARREGAR TODOS OS FILMES PARA MEMï¿½RIA ======
+    // ====== CARREGAR TODOS OS FILMES PARA MEMÓRIA ======
     FILE* arq = fopen("filmes.txt", "r");
     if (!arq) {
         gotoxy(7, 12);
@@ -73,7 +73,7 @@ void balanco_acervo() {
         char dataFormatada[20];
         strftime(dataFormatada, sizeof(dataFormatada), "%d/%m/%Y", data);
 
-        // ====== CABEï¿½ALHO ======
+        // ====== CABEÇALHO ======
         gotoxy(2, 2);  printf("ENZO GATI BARBARESCO");
         gotoxy(2, 3);  printf("JOSE LUIZ DELGADO TAVARES");
         gotoxy(61, 2); printf("ESTRUTURA DE DADOS");
@@ -102,7 +102,7 @@ void balanco_acervo() {
         gotoxy(1, 22); printf("+");  gotoxy(80, 22); printf("+");
         gotoxy(1, 24); printf("+");  gotoxy(80, 24); printf("+");
 
-        // EXIBIR FILMES DA Pï¿½GINA 
+        // EXIBIR FILMES DA PÁGINA 
         int inicio = pagina * porPagina;
         int fim = inicio + porPagina;
         if (fim > total) fim = total;
@@ -120,7 +120,7 @@ void balanco_acervo() {
             posY++;
         }
 
-        // ====== CONTROLE DE Pï¿½GINAS ======
+        // ====== CONTROLE DE PÁGINAS ======
         gotoxy(7, 21);
         printf("Pagina %d de %d", pagina + 1, totalPaginas + 1);
 
@@ -141,13 +141,13 @@ void balanco_acervo() {
                 if (pagina < totalPaginas)
                     pagina++;
                 else
-                    pagina = 0; // voltou para a 1ï¿½ pï¿½gina
+                    pagina = 0; // voltou para a 1ª página
             }
             else if (tecla == 75) { // seta esquerda
                 if (pagina > 0)
                     pagina--;
                 else
-                    pagina = totalPaginas; // foi para a ï¿½ltima pï¿½gina
+                    pagina = totalPaginas; // foi para a última página
             }
         }
 

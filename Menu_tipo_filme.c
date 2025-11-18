@@ -3,7 +3,7 @@
   Data....: 16/10/2025
   Membros.: 268322-2024 : Enzo Gati Barbaresco
             292595-2025 : Jose Luiz Delgado Tavares
-  Objetivo: Se a base de transiÃ§Ã£o entre os diferentes menus de Tipos de filmes
+  Objetivo: Se a base de transição entre os diferentes menus de Tipos de filmes
 */
 
 #ifdef _MSC_VER
@@ -134,4 +134,3 @@ void menu_tipos_filme() {
 
     } while (opcao != 5);
 }
-

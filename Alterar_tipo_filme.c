@@ -3,7 +3,7 @@
   Data....: 16/10/2025
   Membros.: 268322-2024 : Enzo Gati Barbaresco
             292595-2025 : Jose Luiz Delgado Tavares
-  Objetivo: Mudar informaÃ§Ãµes dos tipos
+  Objetivo: Mudar informações dos tipos
 */
 
 #ifdef _MSC_VER
@@ -12,6 +12,7 @@
 #endif
 
 #include "Funcoes.h"
+#include <ctype.h>
 
 void Alterar_tipoFilme() {
 
@@ -73,7 +74,7 @@ void Alterar_tipoFilme() {
 
         // ===== Entrada dos campos =====
 
-        // CÃ³digo
+        // Código
         do {
             gotoxy(27, 9);
             printf("                    ");
@@ -91,7 +92,7 @@ void Alterar_tipoFilme() {
             tipo[strcspn(tipo, "\n")] = '\0';
         } while (strlen(tipo) == 0);
 
-        // RelevÃ¢ncia
+        // Relevância
         do {
             gotoxy(27, 13);
             printf("                    ");
@@ -126,7 +127,7 @@ void Alterar_tipoFilme() {
             token = strtok(NULL, ",");
             if (token) strcpy(t.dataHora, token);
 
-            // Verifica correspondÃªncia
+            // Verifica correspondência
             if (strcmp(t.codigo, codigo) == 0 &&
                 strcmp(t.tipo, tipo) == 0 &&
                 strcmp(t.relevancia, relevancia) == 0) {
@@ -139,7 +140,7 @@ void Alterar_tipoFilme() {
 
         if (encontrado) {
 
-            // Limpa Ã¡rea central
+            // Limpa área central
             for (int y = 6; y <= 20; y++) {
                 gotoxy(5, y);
                 printf("                                                                               ");
@@ -150,7 +151,7 @@ void Alterar_tipoFilme() {
 
             char tmp[256];
 
-            // CÃ³digo
+            // Código
             gotoxy(7, 8);
             printf("Codigo...................: %s", t.codigo);
             gotoxy(40, 8);
@@ -182,7 +183,7 @@ void Alterar_tipoFilme() {
                 t.tipo[sizeof(t.tipo) - 1] = '\0';
             }
 
-            // DescriÃ§Ã£o
+            // Descrição
             gotoxy(7, 10);
             printf("Descricao................: %s", t.descricao);
             gotoxy(40, 10);
@@ -198,7 +199,7 @@ void Alterar_tipoFilme() {
                 t.descricao[sizeof(t.descricao) - 1] = '\0';
             }
 
-            // RelevÃ¢ncia
+            // Relevância
             gotoxy(7, 11);
             printf("Relevancia...............: %s", t.relevancia);
             gotoxy(40, 11);
@@ -214,7 +215,7 @@ void Alterar_tipoFilme() {
                 t.relevancia[sizeof(t.relevancia) - 1] = '\0';
             }
 
-            // ===== ConfirmaÃ§Ã£o =====
+            // ===== Confirmação =====
             char confirma;
             do {
                 gotoxy(2, 23);
@@ -224,7 +225,7 @@ void Alterar_tipoFilme() {
 
             if (confirma == 'S') {
 
-                // ===== AlteraÃ§Ã£o direta no arquivo =====
+                // ===== Alteração direta no arquivo =====
                 FILE* arquivo = fopen("tipos.txt", "r+");
                 if (arquivo == NULL) {
                     gotoxy(2, 23);
@@ -236,7 +237,7 @@ void Alterar_tipoFilme() {
                 char linhaTemp[512];
                 long posInicio = -1;
 
-                // Procura a posiÃ§Ã£o original
+                // Procura a posição original
                 while (!feof(arquivo)) {
 
                     long pos = ftell(arquivo);
@@ -291,7 +292,7 @@ void Alterar_tipoFilme() {
                 }
             }
 
-            // ===== Nova alteraÃ§Ã£o =====
+            // ===== Nova alteração =====
             char nova;
             do {
                 gotoxy(2, 23);
@@ -323,4 +324,3 @@ void Alterar_tipoFilme() {
 
     } while (1);
 }
-

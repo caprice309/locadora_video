@@ -17,10 +17,10 @@
 int linha_vazia(const char* s) {
     while (*s != '\0') {
         if (*s != ' ' && *s != '\n' && *s != '\r' && *s != '\t')
-            return 0; // achou caractere entï¿½o nï¿½o estï¿½ vazia
+            return 0; // achou caractere então não está vazia
         s++;
     }
-    return 1; // sï¿½ tinha espaï¿½os/brancos entï¿½o vazia :D
+    return 1; // só tinha espaços/brancos então vazia :D
 }
 
 void extrairMesAno(const char* data, int* dia, int* mes, int* ano) {
@@ -41,7 +41,7 @@ void balanco_movimentacoes() {
         char dataFormatada[20];
         strftime(dataFormatada, sizeof(dataFormatada), "%d/%m/%Y", data);
 
-        // ====== CABEï¿½ALHO ======
+        // ====== CABEÇALHO ======
         gotoxy(2, 2);  printf("ENZO GATI BARBARESCO");
         gotoxy(2, 3);  printf("JOSE LUIZ DELGADO TAVARES");
         gotoxy(61, 2); printf("ESTRUTURA DE DADOS");
@@ -82,7 +82,7 @@ void balanco_movimentacoes() {
         gotoxy(7, 10);
         printf("Total de filmes......: %d", totalFilmes);
 
-        // ====== CONTAR LOCAï¿½ï¿½ES ======
+        // ====== CONTAR LOCAÇÕES ======
         int totalLocacoesMes = 0;
         int loc24 = 0;
         int loc48 = 0;
@@ -94,14 +94,14 @@ void balanco_movimentacoes() {
         int contFilmes[2000];
         int totalFilmesDistintos = 0;
 
-        // ====== Mï¿½DIA + MLEHORES ======
-        char clientes[2000][20];        // cï¿½digo do cliente
+        // ====== MÉDIA + MLEHORES ======
+        char clientes[2000][20];        // código do cliente
         char nomeClientes[2000][100];   // nome do cliente
-        int locacoesCliente[2000];      // quantidade de locaï¿½ï¿½es
+        int locacoesCliente[2000];      // quantidade de locações
         int totalClientesDistintos = 0;
 
 
-        // ====== Mï¿½DIA DE ATRASO ======
+        // ====== MÉDIA DE ATRASO ======
         double somaAtrasos = 0;
         int qtdAtrasos = 0;
 
@@ -169,7 +169,7 @@ void balanco_movimentacoes() {
                     totalClientesDistintos++;
                 }
 
-                // ====== Mï¿½DIA DE ATRASO ======
+                // ====== MÉDIA DE ATRASO ======
                 struct tm al = { 0 }, dev = { 0 };
                 int dia, mes, ano;
 
@@ -199,7 +199,7 @@ void balanco_movimentacoes() {
                     m == mesAtual && a == anoAtual)
                     loc48++;
 
-                // ====== LOCAï¿½ï¿½ES DO Mï¿½S ======
+                // ====== LOCAÇÕES DO MÊS ======
                 if (m == mesAtual && a == anoAtual)
                     totalLocacoesMes++;
             }
@@ -251,7 +251,7 @@ void balanco_movimentacoes() {
             }
         }
 
-        // ====== Cï¿½LCULOS FINAIS ======
+        // ====== CÁLCULOS FINAIS ======
         double mediaLocUsuario = 0;
         if (totalClientesDistintos > 0)
             mediaLocUsuario = (double)totalLocacoes / totalClientesDistintos;

@@ -16,14 +16,14 @@
 #include <string.h>
 #include <ctype.h>
 
-// Salva um TipoFilme em memÃ³ria e no arquivo "tipos.txt"
+// Salva um TipoFilme em memória e no arquivo "tipos.txt"
 void salvar_tipo(TipoFilme t) {
-    // Adiciona no array de tipos em memÃ³ria
+    // Adiciona no array de tipos em memória
     if (n_tipos < MAX_TIPOS) {
         tipos[n_tipos++] = t;
     }
     else {
-        printf("Limite mÃ¡ximo de tipos atingido!\n");
+        printf("Limite máximo de tipos atingido!\n");
         return;
     }
 
@@ -107,7 +107,7 @@ void inclusao_tipo() {
 
     // ===== Entrada dos campos =====
 
-    // CÃ³digo
+    // Código
     do {
         gotoxy(37, 8);
         printf("                 ");
@@ -157,7 +157,7 @@ void inclusao_tipo() {
         printf("Erro ao obter data/hora");
     }
 
-    // ===== ConfirmaÃ§Ã£o =====
+    // ===== Confirmação =====
     do {
         gotoxy(37, 14);
         confirma = getchar();
@@ -235,4 +235,3 @@ void inclusao_tipo() {
         }
     }
 }
-

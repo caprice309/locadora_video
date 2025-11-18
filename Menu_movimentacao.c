@@ -3,7 +3,7 @@
   Data....: 16/10/2025
   Membros.: 268322-2024 : Enzo Gati Barbaresco
             292595-2025 : Jose Luiz Delgado Tavares
-  Objetivo: Se a base de transiÃ§Ã£o entre os diferentes menus de movimentaÃ§Ã£o
+  Objetivo: Se a base de transição entre os diferentes menus de movimentação
 */
 
 #ifdef _MSC_VER
@@ -13,6 +13,8 @@
 
 #include "Funcoes.h"
 #include <conio.h>
+#include <ctype.h>
+
 
 void menu_movimentacao() {
     int i;
@@ -78,11 +80,11 @@ void menu_movimentacao() {
         int valido = 0;
 
         while (!valido || strlen(entrada) == 0) {
-            // lÃª a entrada como texto
+            // lê a entrada como texto
             fgets(entrada, sizeof(entrada), stdin);
             entrada[strcspn(entrada, "\n")] = '\0'; // remove o Enter
 
-            // verifica se a entrada contÃ©m apenas nÃºmeros
+            // verifica se a entrada contém apenas números
             valido = 1;
             for (int i = 0; i < strlen(entrada); i++) {
                 if (!isdigit((unsigned char)entrada[i])) {
@@ -106,7 +108,7 @@ void menu_movimentacao() {
             }
         }
 
-        // converte para inteiro apenas se for vÃ¡lido
+        // converte para inteiro apenas se for válido
         opcao = atoi(entrada);
 
         switch (opcao) {
@@ -131,5 +133,4 @@ void menu_movimentacao() {
         break;
         }
     } while (opcao != 5);
-
 }

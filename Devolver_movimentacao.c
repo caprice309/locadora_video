@@ -13,6 +13,8 @@
 
 #include "Funcoes.h"
 #include <conio.h>
+#include <ctype.h>
+
 
 int perguntarNovaDevolucao() {
     char novo;
@@ -33,7 +35,7 @@ int perguntarNovaDevolucao() {
 
 void devolver_movimentacao() {
 
-    while (1) {     //Pq s√≥ essa tela ta dando erro de recurs√£o mds
+    while (1) {     //Pq sÛ essa tela ta dando erro de recurs„o mds
 
         int i;
         system("color 0a");
@@ -126,7 +128,7 @@ void devolver_movimentacao() {
         }
         fclose(arq);
 
-        // --- filme n√£o encontrado ---
+        // --- filme n„o encontrado ---
         if (indiceFilme == -1) {
             gotoxy(2, 23); printf("FILME NAO ENCONTRADO!");
             getch();
@@ -138,7 +140,7 @@ void devolver_movimentacao() {
             continue;
         }
 
-        // --- filme n√£o alugado ---
+        // --- filme n„o alugado ---
         if (filmes[indiceFilme].alugado == 0) {
             gotoxy(2, 23); printf("FILME NAO ESTA ALUGADO!");
             getch();
@@ -238,7 +240,7 @@ void devolver_movimentacao() {
         }
 
 
-        // ===== CONFIRMA DEVOLU√á√ÉO =====
+        // ===== CONFIRMA DEVOLU«√O =====
 
         char confirma;
         do {
@@ -320,7 +322,7 @@ void devolver_movimentacao() {
         getch();
 
 
-        // ===== PERGUNTAR NOVA DEVOLU√á√ÉO =====
+        // ===== PERGUNTAR NOVA DEVOLU«√O =====
 
         if (!perguntarNovaDevolucao()) {
             menu_movimentacao();
@@ -329,4 +331,3 @@ void devolver_movimentacao() {
 
     } // fim do while(1)
 }
-

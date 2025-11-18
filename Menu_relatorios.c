@@ -3,7 +3,7 @@
   Data....: 16/10/2025
   Membros.: 268322-2024 : Enzo Gati Barbaresco
             292595-2025 : Jose Luiz Delgado Tavares
-  Objetivo: Ser a base de transiï¿½ï¿½o entre os diferentes menus de relatorios
+  Objetivo: Ser a base de transição entre os diferentes menus de relatorios
 */
 
 #ifdef _MSC_VER
@@ -13,6 +13,8 @@
 
 #include "Funcoes.h"
 #include <conio.h>
+#include <ctype.h>
+
 
 void menu_relatorios() {
     int i;
@@ -78,11 +80,11 @@ void menu_relatorios() {
         int valido = 0;
 
         while (!valido || strlen(entrada) == 0) {
-            // lï¿½ a entrada como texto
+            // lê a entrada como texto
             fgets(entrada, sizeof(entrada), stdin);
             entrada[strcspn(entrada, "\n")] = '\0'; // remove o Enter
 
-            // verifica se a entrada contï¿½m apenas nï¿½meros
+            // verifica se a entrada contém apenas números
             valido = 1;
             for (int i = 0; i < strlen(entrada); i++) {
                 if (!isdigit((unsigned char)entrada[i])) {
@@ -106,7 +108,7 @@ void menu_relatorios() {
             }
         }
 
-        // converte para inteiro apenas se for vï¿½lido
+        // converte para inteiro apenas se for válido
         opcao = atoi(entrada);
 
         switch (opcao) {

@@ -12,6 +12,8 @@
 #endif
 
 #include "Funcoes.h"
+#include <ctype.h>
+
 
 void Consultar_filme() {
 
@@ -73,7 +75,7 @@ void Consultar_filme() {
 
         // ===== Entrada dos campos =====
 
-        // CÃ³digo
+        // Código
         do {
             gotoxy(27, 9);
             printf("                    ");
@@ -82,7 +84,7 @@ void Consultar_filme() {
             codigo[strcspn(codigo, "\n")] = '\0';
         } while (strlen(codigo) == 0);
 
-        // TÃ­tulo
+        // Título
         do {
             gotoxy(27, 11);
             printf("                                        ");
@@ -127,7 +129,7 @@ void Consultar_filme() {
             token = strtok(NULL, ",");
             if (token) strcpy(f.dataHora, token);
 
-            // Verifica correspondÃªncia
+            // Verifica correspondência
             if (strcmp(f.codigo, codigo) == 0 &&
                 strcmp(f.titulo, titulo) == 0 &&
                 strcmp(f.diretor, diretor) == 0) {
@@ -139,7 +141,7 @@ void Consultar_filme() {
         fclose(arquivo);
 
         if (encontrado) {
-            // Limpa Ã¡rea central e mostra dados do filme
+            // Limpa área central e mostra dados do filme
             for (int y = 6; y <= 20; y++) {
                 gotoxy(5, y);
                 printf("                                                                               ");
@@ -206,4 +208,3 @@ void Consultar_filme() {
 
     } while (1);
 }
-
