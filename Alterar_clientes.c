@@ -1,9 +1,9 @@
 /*
-  Autor...: José Luiz Delgado Tavares
+  Autor...: Enzo Gati Barbaresco
   Data....: 16/10/2025
   Membros.: 268322-2024 : Enzo Gati Barbaresco
             292595-2025 : Jose Luiz Delgado Tavares
-  Objetivo: Mudar informações de clientes
+  Objetivo: Mudar informaÃ§Ãµes de clientes
 */
 
 #ifdef _MSC_VER
@@ -73,7 +73,7 @@ void Alterar_cliente() {
 
         // ===== Entrada dos campos =====
 
-        // Código
+        // CÃ³digo
         do {
             gotoxy(27, 9);
             printf("                    ");
@@ -132,7 +132,7 @@ void Alterar_cliente() {
             token = strtok(NULL, ",");
             if (token) c.filmesAlugados = atoi(token);
 
-            // Verifica correspondência
+            // Verifica correspondÃªncia
             if (strcmp(c.codigo, codigo) == 0 &&
                 strcmp(c.nome, nome) == 0 &&
                 strcmp(c.cpf, cpf) == 0) {
@@ -144,7 +144,7 @@ void Alterar_cliente() {
         fclose(arquivo);
 
         if (encontrado) {
-            // Limpa área central e mostra dados do cliente
+            // Limpa Ã¡rea central e mostra dados do cliente
             for (int y = 6; y <= 20; y++) {
                 gotoxy(5, y);
                 printf("                                                                               ");
@@ -156,7 +156,7 @@ void Alterar_cliente() {
             // ===== Entrada dos campos =====
             char tmp[256];
 
-            // Código
+            // CÃ³digo
             gotoxy(7, 8);
             printf("Codigo do cliente........: %s", c.codigo);
             gotoxy(40, 8);
@@ -190,7 +190,7 @@ void Alterar_cliente() {
                 c.nome[sizeof(c.nome) - 1] = '\0';
             }
 
-            // Endereço
+            // EndereÃ§o
             gotoxy(7, 10);
             printf("Endereco do cliente......: %s", c.endereco);
             gotoxy(40, 10);
@@ -255,7 +255,7 @@ void Alterar_cliente() {
             }
 
 
-            // ===== Confirmação =====
+            // ===== ConfirmaÃ§Ã£o =====
             char confirma;
             do {
                 gotoxy(2, 23);
@@ -264,7 +264,7 @@ void Alterar_cliente() {
             } while (confirma != 'S' && confirma != 'N');
 
             if (confirma == 'S') {
-                // ===== Alteração direta no arquivo =====
+                // ===== AlteraÃ§Ã£o direta no arquivo =====
                 FILE* arquivo = fopen("clientes.txt", "r+");
                 if (arquivo == NULL) {
                     gotoxy(2, 23);
@@ -276,7 +276,7 @@ void Alterar_cliente() {
                 char linhaTemp[512];
                 long posInicio = -1;
 
-                // Procura a posição do cliente no arquivo
+                // Procura a posiÃ§Ã£o do cliente no arquivo
                 while (!feof(arquivo)) {
                     long pos = ftell(arquivo);
                     if (fgets(linhaTemp, sizeof(linhaTemp), arquivo) == NULL) break;
@@ -319,7 +319,7 @@ void Alterar_cliente() {
                     getch();
                 }
                 else {
-                    // Move o cursor de volta pro início da linha
+                    // Move o cursor de volta pro inÃ­cio da linha
                     fseek(arquivo, posInicio, SEEK_SET);
 
                     // Regrava a linha com os novos dados
@@ -334,7 +334,7 @@ void Alterar_cliente() {
                         c.filmesAlugados);
 
 
-                    fflush(arquivo); // força escrita imediata
+                    fflush(arquivo); // forÃ§a escrita imediata
                     fclose(arquivo);
 
                     gotoxy(2, 23);
@@ -343,7 +343,7 @@ void Alterar_cliente() {
                 }
             }
 
-            // ===== Nova alteração =====
+            // ===== Nova alteraÃ§Ã£o =====
             char nova;
             do {
                 gotoxy(2, 23);
@@ -375,3 +375,4 @@ void Alterar_cliente() {
 
     } while (1);
 }
+
