@@ -1,0 +1,4 @@
+1,Comedia,Risadas kk,9,18/11/2025 18:41:41
+2,Romance,Amor mwah mwah,8,18/11/2025 18:42:17
+3,Terror,Medo,10,18/11/2025 18:42:44
+4,Acao,Tiro porrada e bomba,10,18/11/2025 18:43:00
