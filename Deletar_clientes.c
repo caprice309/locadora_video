@@ -1,5 +1,5 @@
 /*
-  Autor...: José Luiz Delgado Tavares
+  Autor...: Enzo Gati Barbaresco
   Data....: 16/10/2025
   Membros.: 268322-2024 : Enzo Gati Barbaresco
             292595-2025 : Jose Luiz Delgado Tavares
@@ -73,7 +73,7 @@ void Deletar_cliente() {
 
         // ===== Entrada dos campos =====
 
-        // Código
+        // CÃ³digo
         do {
             gotoxy(27, 9);
             printf("                    ");
@@ -127,7 +127,7 @@ void Deletar_cliente() {
             token = strtok(NULL, ",");
             if (token) strcpy(c.dataHora, token);
 
-            // Verifica correspondência (todas as infos devem coincidir)
+            // Verifica correspondÃªncia (todas as infos devem coincidir)
             if (strcmp(c.codigo, codigo) == 0 &&
                 strcmp(c.nome, nome) == 0 &&
                 strcmp(c.cpf, cpf) == 0) {
@@ -139,7 +139,7 @@ void Deletar_cliente() {
         fclose(arquivo);
 
         if (encontrado) {
-            // Limpa área central e mostra dados do cliente
+            // Limpa Ã¡rea central e mostra dados do cliente
             for (int y = 6; y <= 20; y++) {
                 gotoxy(5, y);
                 printf("                                                                               ");
@@ -163,7 +163,7 @@ void Deletar_cliente() {
             gotoxy(7, 14);
             printf("Data e hora do cadastro..: %s", c.dataHora);
 
-            // ===== Confirma exclusão =====
+            // ===== Confirma exclusÃ£o =====
             char confirma;
             do {
                 gotoxy(2, 23);
@@ -172,7 +172,7 @@ void Deletar_cliente() {
             } while (confirma != 'S' && confirma != 'N');
 
             if (confirma == 'S') {
-                // ===== Exclusão direta no arquivo =====
+                // ===== ExclusÃ£o direta no arquivo =====
                 FILE* arq = fopen("clientes.txt", "r+");
                 if (arq == NULL) {
                     gotoxy(2, 23);
@@ -223,7 +223,7 @@ void Deletar_cliente() {
                 else {
                     fseek(arq, posInicio, SEEK_SET);
 
-                    // Sobrescreve a linha com espaços em branco
+                    // Sobrescreve a linha com espaÃ§os em branco
                     for (int j = 0; j < tamLinha - 1; j++) fputc(' ', arq);
                     fputc('\n', arq);
                     fflush(arq);
@@ -235,7 +235,7 @@ void Deletar_cliente() {
                 }
             }
 
-            // ===== Nova exclusão =====
+            // ===== Nova exclusÃ£o =====
             char nova;
             do {
                 gotoxy(2, 23);
@@ -276,3 +276,4 @@ void Deletar_cliente() {
 
     } while (1);
 }
+
