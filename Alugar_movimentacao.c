@@ -1,5 +1,5 @@
 /*
-  Autor...: José Luiz Delgado Tavares
+  Autor...: Enzo Gati Barbaresco
   Data....: 16/10/2025
   Membros.: 268322-2024 : Enzo Gati Barbaresco
             292595-2025 : Jose Luiz Delgado Tavares
@@ -19,23 +19,23 @@
 
 void salvar_historico(HistoricoLocacao h) {
 
-    // Adiciona no array de histórico em memória
+    // Adiciona no array de histÃ³rico em memÃ³ria
     if (n_historico < MAX_HISTORICO) {
         historico[n_historico++] = h;
     }
     else {
-        printf("Limite máximo de registros do histórico atingido!\n");
+        printf("Limite mÃ¡ximo de registros do histÃ³rico atingido!\n");
         return;
     }
 
     // Abre o arquivo para acrescentar o registro
     FILE* arquivo = fopen("historico.txt", "a");
     if (arquivo == NULL) {
-        printf("Erro ao abrir arquivo para salvar o histórico.\n");
+        printf("Erro ao abrir arquivo para salvar o histÃ³rico.\n");
         return;
     }
 
-    // Salva os dados no arquivo em formato texto, separados por vírgula
+    // Salva os dados no arquivo em formato texto, separados por vÃ­rgula
     fprintf(arquivo, "%s,%s,%d,%s,%s,%d,%s,%s\n",
         h.codigoFilme,
         h.tituloFilme,
@@ -62,7 +62,7 @@ int perguntarNovoEmprestimo() {
 
     limparBuffer();
 
-    return (novo == 'S'); // 1 = sim | 0 = não
+    return (novo == 'S'); // 1 = sim | 0 = nÃ£o
 }
 
 void alugar_movimentacao() {
@@ -133,7 +133,7 @@ void alugar_movimentacao() {
         if (!arq) {
             gotoxy(2, 23); printf("ERRO AO ABRIR ARQUIVO DE FILMES!");
             getch();
-            continue;   // volta ao loop sem recursão
+            continue;   // volta ao loop sem recursÃ£o
         }
 
         Filme filmes[500];
@@ -158,7 +158,7 @@ void alugar_movimentacao() {
         }
         fclose(arq);
 
-        // --- filme não encontrado ---
+        // --- filme nÃ£o encontrado ---
         if (indiceFilme == -1) {
             gotoxy(2, 23); printf("FILME NAO ENCONTRADO!");
             getch();
@@ -170,7 +170,7 @@ void alugar_movimentacao() {
             continue;
         }
 
-        // --- verificar se há quantidade disponível ---
+        // --- verificar se hÃ¡ quantidade disponÃ­vel ---
         int quantidadeTotal = atoi(filmes[indiceFilme].genero);
         int quantidadeAlugada = filmes[indiceFilme].alugado;
 
@@ -361,9 +361,9 @@ void alugar_movimentacao() {
         gotoxy(2, 23); printf("FILME ALUGADO COM SUCESSO!");
         getch();
 
-        // ================== REGISTRAR NO HISTÓRICO ==================
+        // ================== REGISTRAR NO HISTÃ“RICO ==================
         HistoricoLocacao h;
-        memset(&h, 0, sizeof(HistoricoLocacao));  // <-- CORREÇÃO PRINCIPAL
+        memset(&h, 0, sizeof(HistoricoLocacao));  // <-- CORREÃ‡ÃƒO PRINCIPAL
 
         // FILME
         strcpy(h.codigoFilme, filmes[indiceFilme].codigo);
@@ -373,7 +373,7 @@ void alugar_movimentacao() {
         strcpy(h.codigoCliente, codCliente);
         strcpy(h.nomeCliente, nomeCliente);
 
-        // ===== VERIFICAR SE JÁ EXISTE =====
+        // ===== VERIFICAR SE JÃ EXISTE =====
         int achouFilme = 0;
         int achouCliente = 0;
 
@@ -404,7 +404,7 @@ void alugar_movimentacao() {
             h.dataAluguel[sizeof(h.dataAluguel) - 1] = '\0';
         }
 
-        // ===== DATA DE DEVOLUÇÃO =====
+        // ===== DATA DE DEVOLUÃ‡ÃƒO =====
         agora += (time_t)14 * 24 * 3600;
         dataPtr = localtime(&agora);
         if (dataPtr != NULL) {
@@ -426,3 +426,4 @@ void alugar_movimentacao() {
 
     } // fim do while(1)
 }
+
