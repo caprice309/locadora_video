@@ -1,9 +1,9 @@
 /*
-  Autor...: José Luiz Delgado Tavares
+  Autor...: Enzo Gati Barbaresco
   Data....: 16/10/2025
   Membros.: 268322-2024 : Enzo Gati Barbaresco
             292595-2025 : Jose Luiz Delgado Tavares
-  Objetivo: Se a base de transição entre os diferentes menus de clientes
+  Objetivo: Se a base de transiÃ§Ã£o entre os diferentes menus de clientes
 */
 
 #ifdef _MSC_VER
@@ -82,11 +82,11 @@ void menu_cliente() {
         int valido = 0;
 
         while (!valido || strlen(entrada) == 0) {
-            // lê a entrada como texto
+            // lÃª a entrada como texto
             fgets(entrada, sizeof(entrada), stdin);
             entrada[strcspn(entrada, "\n")] = '\0'; // remove o Enter
 
-            // verifica se a entrada contém apenas números
+            // verifica se a entrada contÃ©m apenas nÃºmeros
             valido = 1;
             for (int i = 0; i < strlen(entrada); i++) {
                 if (!isdigit((unsigned char)entrada[i])) {
@@ -110,7 +110,7 @@ void menu_cliente() {
             }
         }
 
-        // converte para inteiro apenas se for válido
+        // converte para inteiro apenas se for vÃ¡lido
         opcao = atoi(entrada);
 
         switch (opcao) {
@@ -143,4 +143,5 @@ void menu_cliente() {
         break;
     }
     } while (opcao != 5);
+
 }
